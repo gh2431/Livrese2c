@@ -2,6 +2,13 @@
     font-family: "custom";
     src: url('./Super\ Earthly.ttf');
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     color: blue;
     font-size: 1.5rem;
@@ -13,4 +20,17 @@ body {
 header {
     color: black;
     background-color: brown;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+h1, h2 {
+    width: fit-content;
+}
+
+#e2c {
+    height: 100%;
 }
