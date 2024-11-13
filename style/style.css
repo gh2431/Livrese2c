@@ -26,6 +26,29 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px;
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20vw;
+    height: 78vh;
+    background-color: brown;
+    position: fixed;
+    top: 21vh;
+    margin-left: 1vh;
+    z-index: 17;
+    
+}
+
+main {
+    position: relative;
+    top : 20vh;
 }
 
 h1, h2 {
@@ -65,7 +88,50 @@ ul {
 }
 
 #imag {
-    height: 50vh;
-    width: 110%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    width: 100vw;
     background-image: url('../asset/library.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    aspect-ratio: 1904/640;
+    background-attachment: fixed;
+    background-position-y: 15vh;
+}
+
+#imag>h2 {
+    font-size: 3rem;
+    padding-right: 5vw;
+    color: black;
+}
+
+.bouton {
+    display: block;
+    text-decoration: none;
+    width: 80%;
+    height: 5vh;
+    color: blue;
+    background-color: black;
+    border: solid black 2px;
+    border-radius: 2.5vh;
+    text-align: center;
+    padding-top: 7px;
+   /*box-shadow: black 2px 2px 5px 0;*/
+    transition: background-color 1000ms, color 100ms, border 2000ms;
+}
+
+.bouton:hover {
+    display: block;
+    text-decoration: none;
+    width: 80%;
+    height: 5vh;
+    color: black;
+    background-color: blue;
+    border: solid blue 2px;
+    border-radius: 2.5vh;
+    text-align: center;
+    padding-top: 7px;
+    /*box-shadow: 0 0 2px 0;*/
 }
