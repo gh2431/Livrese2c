@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
         <script type="module" src="../script/test.js"></script>
+        <script type="module" src="../script/nav.js"></script>
     </head>
     <body>
         <header>
@@ -19,6 +20,7 @@
             </div>
         </header>
         <nav>
+            <div id="close"></div>
             <a href="../index.html" class="bouton">Accueil</a>
             <a href="../page/library.html" class="bouton">Bibliothèque</a>
             <a href="../page/game.html" class="bouton">Espace détente</a>
@@ -26,6 +28,19 @@
         </nav>
         <main>
             <p id="resultat"></p>
+            <div>
+                <label for="number1">Premier nombre</label>
+                <input type="number" name="nombre1" id="nombre1">
+            </div>
+            <div>
+                <label for="number2">Deuxieme nombre</label>
+                <input type="number" name="nombre2" id="nombre2">
+            </div>
+            <div>
+                <input type="submit" value="Calculer" id="calculer">
+            </div>
         </main>
+
+        <div id="trigger"></div>
     </body>
 </html>

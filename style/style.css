@@ -43,6 +43,9 @@ nav {
     top: 21vh;
     margin-left: 1vh;
     z-index: 17;
+    left: calc(-20vw - 1vh);
+    transition: left 1s;
+    
     
 }
 
@@ -134,4 +137,33 @@ ul {
     text-align: center;
     padding-top: 7px;
     /*box-shadow: 0 0 2px 0;*/
+}
+
+#trigger {
+    position: fixed;
+    top: 22vh;
+    width: 7vh;
+    aspect-ratio: 1;
+    background-color: brown;
+    border: solid 1px black;
+    border-radius: 0 10 10px 0;
+    background-image: url(../asset/menus.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: left 1s;
+}
+
+#close {
+    display: none;
+    position: relative;
+    top: -7vh;
+    left: 40%;
+    width: 7vh;
+    aspect-ratio: 1;
+    background-color: brown;
+    border: solid 2px black;
+    border-radius: 5px;
+    background-image: url(../asset/croix_2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -4,9 +4,12 @@
 //let age = 24; //int
 //let size = 1.75; //float
 //let isCool = true; //bool
-
+let nombre3 = document.querySelector('#nombre1')
+let nombre4 = document.querySelector('#nombre2')
+let calculer = document.querySelector('#calculer')
 let resultathtml = document.querySelector('#resultat');
-/*console.log(resultathtml);*/
+
+/*console.log(resultathtml);
 
 let nombre1 = parseInt(prompt("donnez un premier nombre"))
 
@@ -14,20 +17,23 @@ while(isNaN(nombre1)) {
     nombre1 = prompt("Il faut écrire un nombre")
 }
 
-/*if(isNaN(nombre1)){
+if(isNaN(nombre1)){
     console.log("Il faut écrire un chiffre")
-} else { */
+} else { 
 
 let nombre2 = parseInt(prompt("Donnez un deuxième nombre"))
 
-while(isNaN(nombre2)) {
+/*while(isNaN(nombre2)) {
     nombre2 = prompt("Il faut écrire un nombre")
 }
 
-/*if(isNaN(nombre2)){
+if(isNaN(nombre2)){
     console.log("Il faut écrire un chiffre")
 } else { */
 
+function makeCalcul() {
+let nombre1 = parseInt(nombre3.value)
+let nombre2 = parseInt(nombre4.value)
 let resultat = nombre1 + nombre2;
 let messageaddition = "<p>Le resultat de l'adittion de "+nombre1+" et de "+nombre2+" est "+resultat+"</p>";
 resultathtml.innerHTML = messageaddition;
@@ -43,6 +49,11 @@ resultathtml.innerHTML += messagemultiplications;
 resultat = nombre1 / nombre2;
 let messagedivisions = `<p>Le résultat de la divisions de ${nombre1} et de ${nombre2} est ${resultat}</p>`;
 resultathtml.innerHTML += messagedivisions;
+}
+
+calculer.addEventListener("click", makeCalcul)
+
+//resultathtml.style.color = "green"
 
 /*for(let i = 1; i<=10; i++) {
     console.log(`${i} - bonjour`)
