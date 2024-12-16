@@ -95,3 +95,27 @@ drop site;
 /*jointure*/
 
 select users.pseudo, users.email, sites.name from users inner join sites on users.site_id = sites.id;
+
+/*les livres*/
+
+create table if not exists genre(
+    id tinyint unsigned not null auto_increment primary key,
+    name varchar(255) not null unique
+)engine=innodb;
+
+create table if not exists livres (
+    id smallint unsigned not null auto_increment primary key,
+    titre varchar(255) not null,
+    auteur varchar(255) not null default "Inconnu",
+    genre_id tinyint unsigned not null default 1,
+    synopsis text,
+    date_of_edition char(4) not null default '-nc-',
+    pages smallint, 
+    site_id tinyint unsigned not null,
+    constraint fk_genre
+        foreign key (genre_id)
+        references genre(id),
+    constraint fk_sites_book
+        foreign key (site_id)
+        references sites(id)
+)engine=innodb;
