@@ -119,3 +119,60 @@ create table if not exists livres (
         foreign key (site_id)
         references sites(id)
 )engine=innodb;
+
+alter table livres
+    add column user_id smallint unsigned;
+
+alter table livres
+    add constraint fk_livres_user
+    foreign key (user_id)
+    references users(id);
+
+    /*les jointure*/
+
+    select titre, user_id from livres;
+
+     select livres.titre, users.pseudo from livres
+        inner join users on livres.user_id = users.id;
+
+    select livres.titre, users.pseudo from livres
+        left join users on livres.user_id = users.id;
+
+     select livres.titre, users.pseudo from livres
+        right join users on livres.user_id = users.id;
+
+    select livres.titre,genre.name, users.pseudo from livres
+        inner join users on livres.user_id = users.id
+        left join genre on livres.genre_id = genre.id;
+
+    create view livres_vw as (select livres.titre, livres.auteur, genre.name as genre, livres.date_of_edition as date, livres.pages, sites.name as site, users.pseudo, livres.id, livres.genre_id, livres.site_id, user_id from livres
+        left join genre on livres.genre_id = genre.id
+        left join sites on livres.site_id = sites.id
+        left join users on livres.user_id = users.id);
+
+    /*Recherche*/
+
+    select * from livres_vw where pages <= 100 order by pages asc;
+
+    select * from livres_vw where pages <= 100 and site="lille" order by pages asc;
+
+    select * from livres_vw where pages <= 100 OR site="lille" order by pages asc;
+
+    /*relation  plusieur à plusieur-commentaire*/
+
+    create table if not exists comments (
+        comment text not null,
+        user_id smallint unsigned not null,
+        livres_id smallint unsigned not null,
+        primary key (user_id, livres_id),
+            foreign key (user_id)
+            references users(id),
+        constraint fk_comment_livres
+            foreign key (livres_id)
+            references livres(id)
+    )engine=innodb;
+
+    select livres.titre, comments.comment from livres
+        inner join comments on livres.id = comments.livres_id
+        inner join users on comments.user_id = users.id
+        where livres.id - 1;
