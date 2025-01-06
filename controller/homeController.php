@@ -1,28 +1,53 @@
+<?php
+    $isLogged = true;
+    $title = "Silence on Lit à l'E2C";
+    $subtitle = "Lire c'est bien";
+    $navButtons = 
+    [
+        [
+            "label" => "Accueil",
+            "path" => "../controller/homeController.php"
+        ],
+        [
+            "label" => "Bibliothéque",
+            "path" => "../controller/libraryController.php"
+        ],
+        [
+            "label" => "Espace détente",
+            "path" => "../controller/gameController.php"
+        ],
+        [
+            "label" => "Qui sommes nous ?",
+            "path" => "../controller/usController.php"
+        ],
+    ];
+
+    if($isLogged){
+        $navButtons[]= [
+            "label" => "Mon compte",
+            "path"=> "../controller/accountController.php"
+        ];
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Accueil E2C</title>
-        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="../style/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <script type="module" src="../script/test.js"></script>
+        <script type="module" src="../script/nav.js"></script>
     </head>
     <body>
-        <header>
-            <img src="./asset/logo.png" alt="logo e2c" id="e2c">
-            <div id="titres">
-                <h1>Silence on lit à l'e2c</h1>
-                <h2>Explorer votre imaginaire</h2>
-            </div>
-        </header>
-        <nav>
-            <a href="./index.html" class="bouton">Accueil</a>
-            <a href="./page/library.html" class="bouton">Bibliothèque</a>
-            <a href="./page/game.html" class="bouton">Espace détente</a>
-            <a href="./page/us.html" class="bouton">Qui somme-nous</a>
-        </nav>
+        <?php
+            require_once("../module/_header.php");
+            require_once("../module/_nav.php");
+        ?>
         <main>
         <article>
         <p>Mettre en place le dispositif Silence, on lit ! au sein de <a href="https://e2c-grandlille.fr/" target="_blank">l’E2C (École de la 2ᵉ Chance)</a> à Lille présente de nombreux intérêts, en particulier pour les jeunes de 16 à 25 ans qui y suivent leur parcours de formation. Cette initiative, déjà bien intégrée dans de nombreuses écoles en France, consiste à consacrer 15 minutes chaque jour à la lecture silencieuse. Voici pourquoi elle pourrait avoir un impact positif au sein de l’E2C :</p>
@@ -54,7 +79,6 @@
             <p> intégrant Silence, on lit ! dans les pratiques de l’E2C de Lille, on contribue à faire de la lecture une habitude positive et régulière pour les jeunes, les aidant à s’épanouir personnellement et professionnellement.</p> 
         </article>
         </main>
-
         <div id="trigger"></div>
     </body>
 </html>

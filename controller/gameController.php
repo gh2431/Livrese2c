@@ -1,3 +1,26 @@
+<?php
+    $title = "Des jeux";
+    $subtitle = "Pour l'esprit";
+    $navButtons = 
+    [
+        [
+            "label" => "Accueil",
+            "path" => "../controller/homeController.php"
+        ],
+        [
+            "label" => "Bibliothéque",
+            "path" => "../controller/libraryController.php"
+        ],
+        [
+            "label" => "Espace détente",
+            "path" => "../controller/gameController.php"
+        ],
+        [
+            "label" => "Qui sommes nous ?",
+            "path" => "../controller/usController.php"
+        ],
+    ];
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,20 +35,10 @@
         <script type="module" src="../script/nav.js"></script>
     </head>
     <body>
-        <header>
-            <img src="../asset/logo.png" alt="logo e2c" id="e2c">
-            <div id="titres">
-                <h1>Silence on lit à l'e2c</h1>
-                <h2>Espace jeux</h2>
-            </div>
-        </header>
-        <nav>
-            <div id="close"></div>
-            <a href="../index.html" class="bouton">Accueil</a>
-            <a href="../page/library.html" class="bouton">Bibliothèque</a>
-            <a href="../page/game.html" class="bouton">Espace détente</a>
-            <a href="../page/us.html" class="bouton">Qui somme-nous</a>
-        </nav>
+        <?php
+            require_once("../module/_header.php");
+            require_once("../module/_nav.php");
+        ?>
         <main>
             <p id="resultat"></p>
             <div>
