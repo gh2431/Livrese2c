@@ -1,7 +1,13 @@
 <?php
+
     $isLogged = true;
-    $title = "Silence on Lit à l'E2C";
-    $subtitle = "Lire c'est bien";
+    
+    if(!$isLogged){
+        header("location:../controller/homeController.php");
+    }
+
+    $title = "Mon compte";
+    $subtitle = "Mes info qu'à moi";
     $navButtons = 
     [
         [
@@ -10,7 +16,7 @@
         ],
         [
             "label" => "Bibliothéque",
-            "path" => "../controller/libraryController.php"
+             "path" => "../controller/libraryController.php"
         ],
         [
             "label" => "Espace détente",
@@ -20,16 +26,10 @@
             "label" => "Qui sommes nous ?",
             "path" => "../controller/usController.php"
         ],
+        [
+            "label" => "Mon compte",
+            "path" => "../controller/accountController.php"
+        ]
     ];
 
-    if($isLogged){
-        $navButtons[]= [
-            "label" => "Mon compte",
-            "path"=> "../controller/accountController.php"
-        ];
-    }
-
-    //var_dump($navButtons);
-
-    require_once("../view/homeView.php");
-
+    require_once("../view/accountView.php");

@@ -167,3 +167,50 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#logform {
+    width: 20%; 
+    border: 4px greenyellow solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* formulaire de connexion */
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-line {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.form-line>* {
+    display: block;
+}
+
+.login-bouton {
+    color: white;
+    padding: 2px;
+    background-color: blue;
+    border: solid 1px gold;
+    border-radius: 5px;
+}
+
+.login-bouton:hover {
+    color: black;
+    background-color: gold;
+    border: blue solid 1px;
+    border-radius: 5px;
+}
