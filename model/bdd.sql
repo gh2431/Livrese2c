@@ -145,7 +145,8 @@ alter table livres
         inner join users on livres.user_id = users.id
         left join genre on livres.genre_id = genre.id;
 
-    create view livres_vw as (select livres.titre, livres.auteur, genre.name as genre, livres.date_of_edition as date, livres.pages, sites.name as site, users.pseudo, livres.id, livres.genre_id, livres.site_id, user_id from livres
+    create view livres_vw as (select livres.titre, livres.auteur, genre.name as genre, livres.date_of_edition as date, livres.pages, sites.name as site, users.pseudo, livres.id, livres.genre_id, livres.site_id, user_id 
+    from livres
         left join genre on livres.genre_id = genre.id
         left join sites on livres.site_id = sites.id
         left join users on livres.user_id = users.id);
